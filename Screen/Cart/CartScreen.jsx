@@ -82,8 +82,8 @@ const CartScreen = () => {
 
 
 
-                                <View style={tw`-mt-2 -ml-16 mb-2  `}>
-                                <Text style={tw`text-black font-bold mt-2 `}>{item.title}</Text>
+                                <View style={tw`-mt-1 -ml-40 mb-2  `}>
+                                <Text style={tw`text-black font-bold mt-2 capitalize `}>{item.title}</Text>
                                 <Text style={tw`text-red-500 mt-4 mb-4 `}> ${item.price}</Text>
                                 <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
               <Text style={styles.removeButton}><TrashIcon  size={20} style={tw`text-black text-gray-500 `}/></Text>

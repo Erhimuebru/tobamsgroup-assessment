@@ -12,7 +12,7 @@ import { HomeIcon as SolidHomeIcon } from "react-native-heroicons/solid";
 import { ShoppingBagIcon as SolidShoppingBagIcon } from "react-native-heroicons/solid";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import MenuDetailsScreen from './Screen/Menu/MenuDetailsScreen';
-import BasketScreen from './Screen/Basket/BasketScreen';
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -67,13 +67,9 @@ const RootNavigator = () => {
       <Stack.Screen
         name="MenuDetail"
         component={MenuDetailsScreen}
-        options={{ presentation: 'modal' }} 
+        options={{ presentation: false }} 
       />
-        <Stack.Screen
-        name="Carter"
-        component={BasketScreen}
-        options={{ presentation: 'modal' }} 
-      />
+      
     </Stack.Navigator>
   );
 };

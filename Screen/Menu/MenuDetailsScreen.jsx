@@ -102,7 +102,7 @@ console.log(items)
       </View>
   
       <View style={tw`flex flex-row justify-between mb-2 mt-4`}>
-<Text style={tw`font-semibold`} >{details.title}</Text>
+<Text style={tw`font-semibold capitalize`} >{details.title}</Text>
 <Text style={tw`text-red-500 font-semibold`}>${details.price}
 </Text>
 

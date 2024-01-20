@@ -66,7 +66,7 @@ const MenuDetailsCard = ({
               </View>
               <View style={styles.detailsContainer}>
                   <View style={tw`flex flex-row justify-between`}>
-                      <Text style={tw`text-black`}>{title}</Text>
+                      <Text style={tw`text-black capitalize`}>{title}</Text>
                       <Text style={tw`text-red-500`}>{`₦${price}`}</Text>
                   </View>
 
