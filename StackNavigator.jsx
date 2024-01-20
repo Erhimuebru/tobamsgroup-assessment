@@ -11,7 +11,6 @@ import { ShoppingBagIcon, HomeIcon } from "react-native-heroicons/outline";
 import { HomeIcon as SolidHomeIcon } from "react-native-heroicons/solid";
 import { ShoppingBagIcon as SolidShoppingBagIcon } from "react-native-heroicons/solid";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import ModalScreen from './Screen/Menu/ModalScreen';
 import MenuDetailsScreen from './Screen/Menu/MenuDetailsScreen';
 import BasketScreen from './Screen/Basket/BasketScreen';
 

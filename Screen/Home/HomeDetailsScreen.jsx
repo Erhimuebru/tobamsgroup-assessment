@@ -10,7 +10,7 @@ import { addToBasket, selectBasketItems, removeFromBasket} from "../../component
 import BasketIcon from "../../components/BasketIcon/BasketIcon";
 
 
-const MenuDetailsScreen = ({ route, id, name,title,price}) => {
+const HomeDetailsScreen = ({ route, id, name,title,price}) => {
   const { details } = route.params;
   console.log('Image URL:', details.img);
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -275,4 +275,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MenuDetailsScreen;
+export default HomeDetailsScreen;

@@ -20,15 +20,14 @@ const CartScreen = () => {
   };
 
   const removeItemFromBasket = (id) => {
-    // Check if the item is already in the basket
     const existingItem = items.find((item) => item.id === id);
 
     if (existingItem) {
       if (existingItem.quantity > 1) {
-        // If the item has a quantity greater than 1, decrease the quantity
+      
         dispatch(removeFromBasket({ id }));
       } else {
-        // If the item has a quantity of 1, remove the entire item
+  
         dispatch(removeFromBasket({ id }));
       }
     }
@@ -46,13 +45,13 @@ const CartScreen = () => {
       ),
       headerTitleAlign: 'center', 
       headerStyle: {
-        backgroundColor: '#ffffff', // White background
+        backgroundColor: '#ffffff', 
       },
       headerTitleStyle: {
-        color: '#000000', // Black text color
-        fontSize: 17, // Adjust the font size as needed
+        color: '#000000',
+        fontSize: 17,
       },
-      headerTintColor: '#ff0000', // Red icon color
+      headerTintColor: '#ff0000', 
     });
   }, [navigation]);
   
@@ -74,9 +73,9 @@ const CartScreen = () => {
                                     <Image
                                     source={{ uri: item.img }}
                                     style={{
-                                    width: 100,  // Adjust the width as needed
-                                    height: 100, // Adjust the height as needed
-                                    borderRadius: 8, // Optional: Add border radius for rounded corners
+                                    width: 100,  
+                                    height: 100, 
+                                    borderRadius: 8,
                                     }}
                                 />
                                 </View>
