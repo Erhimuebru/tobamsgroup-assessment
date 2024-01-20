@@ -1,6 +1,4 @@
-// MenuDetailsCard.js
-
-import React from 'react';
+import React, { useLayoutEffect } from "react";
 import { View, Text, StyleSheet,  Button, TouchableOpacity } from 'react-native';
 import tw from 'twrnc';
 import { useNavigation } from '@react-navigation/native';
@@ -38,29 +36,51 @@ const MenuDetailsCard = ({
         },
       });
     };
+
+
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          title: 'Menu',
+      
+          headerTitleAlign: 'center', 
+          headerStyle: {
+            backgroundColor: '#ffffff', 
+          },
+          headerTitleStyle: {
+            color: '#000000',
+            fontSize: 17, 
+          },
+          headerTintColor: '#ff0000',
+        });
+      }, [navigation]);
   return (
+    <>
+    
     <TouchableOpacity style={styles.cardContainer} onPress={handleCardClick}>
 
-    <View >
-         
-      <Image source={{ uri: img }} style={styles.image} />
-      <View style={tw`absolute left-34 top-2`}>
-                <HeartIcon color='gray'/>
-            </View>
-      <View style={styles.detailsContainer}>
-      <View style={tw`flex flex-row justify-between`}>
-  <Text style={tw`text-black`}>{title}</Text>
-  <Text style={tw`text-red-500`}>{`₦${price}`}</Text>
-</View>
+          <View>
 
-      <View style={tw`flex flex-row gap-2 text-white bg-red-500 p-1 mt-6 mb-4 rounded-3xl`} >
-        <ShoppingBagIcon  style={tw`text-white ml-4 text-center`} />
-        <Text style={tw`text-white text-center mt-1`} 
-        >Add to cart</Text>
-      </View>
-      </View>
-    </View>
-    </TouchableOpacity>
+              <Image source={{ uri: img }} style={styles.image} />
+              <View style={tw`absolute left-34 top-2`}>
+                  <HeartIcon color='gray' />
+              </View>
+              <View style={styles.detailsContainer}>
+                  <View style={tw`flex flex-row justify-between`}>
+                      <Text style={tw`text-black`}>{title}</Text>
+                      <Text style={tw`text-red-500`}>{`₦${price}`}</Text>
+                  </View>
+
+                  <View style={tw`flex flex-row gap-2 text-white bg-red-500 p-2 mt-6 mb-4 rounded-3xl`}>
+                      <ShoppingBagIcon style={tw`text-white ml-4 text-center`} />
+                      <Text style={tw`text-white text-center mt-1`}
+                      >Add to cart</Text>
+                  </View>
+              </View>
+          </View>
+      </TouchableOpacity></>
+
+  
+   
   );
 };
 

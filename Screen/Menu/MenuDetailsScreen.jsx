@@ -8,7 +8,7 @@ import { ChevronLeftIcon,PlusIcon,MinusIcon, ChevronDownIcon} from "react-native
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket, selectBasketItems, removeFromBasket} from "../../components/Features/BasketSlice";
 import BasketIcon from "../../components/BasketIcon/BasketIcon";
-import {  StatusBar } from 'react-native';
+
 
 const MenuDetailsScreen = ({ route, id, name,title,price}) => {
   const { details } = route.params;
@@ -51,6 +51,39 @@ const items = useSelector(selectBasketItems)
     }
   };
   
+  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isTextVisibleNutrition, setIsTextVisibleNutrition] = useState(false);
+  const [isTextVisiblePrepare, setIsTextVisiblePrepare] = useState(false);
+  const [isTextVisibleDietary, setIsTextVisibleDietary] = useState(false);
+  const [isTextVisibleStorage, setIsTextVisibleStorage] = useState(false);
+  const [isTextVisibleExtra, setIsTextVisibleExtra] = useState(false);
+
+
+  const handleToggleIngredirnt = () => {
+    setIsTextVisible((prev) => !prev);
+  };
+
+  const handleToggleNutrition = () => {
+    setIsTextVisibleNutrition((prev) => !prev);
+  };
+
+  const handleTogglePrepare = () => {
+    setIsTextVisiblePrepare((prev) => !prev);
+  };
+
+  const handleToggleDietary = () => {
+    setIsTextVisibleDietary((prev) => !prev);
+  };
+
+  const handleToggleStorage = () => {
+    setIsTextVisibleStorage((prev) => !prev);
+  };
+
+  const handleToggleExtra = () => {
+    setIsTextVisibleExtra((prev) => !prev);
+  };
+
+
       
 console.log(items)
    
@@ -89,43 +122,108 @@ console.log(items)
       )}
 
 
-<View style={tw`border-t border-b border-gray-200 mt-10`} />  
-<View style={tw`flex flex-row justify-between mb-2 mt-4`}>
-  <Text size={20} style={tw`text-black text-gray-500 capitalize `} >ingredients</Text>
-  <ChevronDownIcon size={20} style={tw`text-black text-gray-500 `} />
-</View>
-<View style={tw`border-t border-b border-gray-200`} />
+<View style={tw`border-t border-b mt-8 border-gray-200`} />
+<TouchableOpacity onPress={handleToggleIngredirnt}>
 
-<View style={tw`flex flex-row justify-between mb-2 mt-4`}>
-  <Text size={20} style={tw`text-black text-gray-500 capitalize `} >nutritational information</Text>
-  <ChevronDownIcon size={20} style={tw`text-black text-gray-500 `} />
-</View>
-<View style={tw`border-t border-b border-gray-200`} />
+<View style={tw``}>
+     
+        <View style={tw`flex flex-row mt-2 justify-between items-center`}>
+          <Text size={20} style={tw`text-black text-gray-500 capitalize`}>
+            ingredients
+          </Text>
+          <ChevronDownIcon size={20} style={tw`pt-2 text-gray-500`} />
+        </View>
+     
+      {isTextVisible && (
+        <Text style={tw`mt-4 text-gray-500`} >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, at?</Text>
+      )}
+    </View>
+    </TouchableOpacity>
 
-<View style={tw`flex flex-row justify-between mb-2 mt-4`}>
-  <Text size={20} style={tw`text-black text-gray-500 capitalize `} >How to prepare</Text>
-  <ChevronDownIcon size={20} style={tw`text-black text-gray-500 `} />
-</View>
-<View style={tw`border-t border-b border-gray-200`} />
 
-<View style={tw`flex flex-row justify-between mb-2 mt-4`}>
-  <Text size={20} style={tw`text-black text-gray-500 capitalize `} >dietary information</Text>
-  <ChevronDownIcon size={20} style={tw`text-black text-gray-500 `} />
-</View>
-<View style={tw`border-t border-b border-gray-200`} />
 
-<View style={tw`flex flex-row justify-between mb-2 mt-4`}>
-  <Text size={20} style={tw`text-black text-gray-500 capitalize `} >storage information</Text>
+    <TouchableOpacity onPress={handleToggleNutrition}>
+<View style={tw`border-t border-b mt-5 border-gray-200`} />
+<View style={tw``}>
+     
+        <View style={tw`flex flex-row mt-2 justify-between items-center`}>
+        <Text size={20} style={tw`text-black text-gray-500 capitalize `} >nutritational information</Text>
   <ChevronDownIcon size={20} style={tw`text-black text-gray-500 `} />
-</View>
-<View style={tw`border-t border-b border-gray-200`} />
+        </View>
+     
+      {isTextVisibleNutrition && (
+        <Text style={tw`mt-4 text-gray-500`} >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, at?</Text>
+      )}
+    </View>
+    </TouchableOpacity>
 
-<View style={tw`flex flex-row justify-between mb-2 mt-4`}>
-  <Text size={20} style={tw`text-black text-gray-500 capitalize `} >extra</Text>
+
+
+    <TouchableOpacity onPress={handleTogglePrepare }>
+<View style={tw`border-t border-b mt-4 border-gray-200`} />
+<View style={tw``}>
+     
+        <View style={tw`flex flex-row mt-2 justify-between items-center`}>
+        <Text size={20} style={tw`text-black text-gray-500 capitalize `} >How to prepare</Text>
   <ChevronDownIcon size={20} style={tw`text-black text-gray-500 `} />
-</View>
-<View style={tw`border-t border-b border-gray-200 mb-2`} />
+        </View>
+     
+      {isTextVisiblePrepare && (
+        <Text style={tw`mt-4 text-gray-500`} >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, at?</Text>
+      )}
+    </View>
+    </TouchableOpacity>
 
+
+
+    <TouchableOpacity onPress={handleToggleDietary}>
+<View style={tw`border-t border-b mt-4 border-gray-200`} />
+<View style={tw``}>
+     
+        <View style={tw`flex flex-row mt-2 justify-between items-center`}>
+        <Text size={20} style={tw`text-black text-gray-500 capitalize `} >dietary information</Text>
+          <ChevronDownIcon size={20} style={tw`pt-2 text-gray-500`} />
+        </View>
+     
+      {isTextVisibleDietary && (
+        <Text style={tw`mt-4 text-gray-500`} >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, at?</Text>
+      )}
+    </View>
+    </TouchableOpacity>
+
+
+    <TouchableOpacity onPress={handleToggleStorage}>
+<View style={tw`border-t border-b mt-4 border-gray-200`} />
+<View style={tw``}>
+     
+        <View style={tw`flex flex-row mt-2 justify-between items-center`}>
+        <Text size={20} style={tw`text-black text-gray-500 capitalize `} >storage information</Text>
+          <ChevronDownIcon size={20} style={tw`pt-2 text-gray-500`} />
+        </View>
+     
+      {isTextVisibleStorage && (
+        <Text style={tw`mt-4 text-gray-500`} >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, at?</Text>
+      )}
+    </View>
+    </TouchableOpacity>
+
+
+    <TouchableOpacity onPress={handleToggleExtra}>
+<View style={tw`border-t border-b mt-4 mb-4 border-gray-200`} />
+<View style={tw``}>
+     
+        <View style={tw`flex  flex-row justify-between items-center`}>
+        <Text size={20} style={tw`text-black text-gray-500 capitalize `} >extra</Text>
+          <ChevronDownIcon size={20} style={tw`pt-2 text-gray-500`} />
+        </View>
+     
+      {isTextVisibleExtra && (
+        <Text style={tw`mt-4 text-gray-500`} >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, at?</Text>
+      )}
+    </View>
+    </TouchableOpacity>
+
+    <View style={tw`border-t border-b mt-2 border-gray-200 mb-2`} />
 
 <View style={tw`flex flex-row justify-between mb-6 mt-6`}>
         <TouchableOpacity
@@ -135,7 +233,6 @@ console.log(items)
           <MinusIcon size={20} style={tw`text-black text-gray-500`} />
         </TouchableOpacity>
 
-        {/* Display the quantity for the selected item */}
         <Text style={tw`text-black mt-2 text-gray-500`}>
           {items.find((item) => item.id === details.id)?.quantity || 0}
         </Text>
